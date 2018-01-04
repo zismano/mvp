@@ -18,21 +18,27 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  My TV-Shows place
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  The market is for anyone who likes tv shows
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  The product offers making a TV show list. The user could add or remove a show from the list. The user will gain relavent data for the list from Popcorn API such as rating of the show, network and genre. 
 
 ## Problem ##
   > Describe the problem your product solves.
+  Gathering info of TV shows in one place and using a show list with relevant details.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  The product will give the user the opportunity to have the data he needs in order make a perfect tv show list. 
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+    With few clicks, you'll have the TV-Show list you've always dreamed of!
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
