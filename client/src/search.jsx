@@ -11,7 +11,7 @@ var Search = (props) => {
 			</div>
 			<div>
 				{props.displaySearch.map(show => 
-					<SearchDisplay show={show} />
+					<SearchDisplay show={show} addToList={props.addToList} />
 				)}
 			</div>
 		</div>

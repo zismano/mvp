@@ -21,6 +21,7 @@ class App extends React.Component {
   		url: '/search',
   		type: "GET",
   		data: {title: showToSearch},
+      contentType: "application/json",
   		success: (show) => {
   			console.log('success', show);
         let search = [show];
@@ -40,15 +41,21 @@ class App extends React.Component {
     $.ajax({
       url: '/shows',
       type: "POST",
-      data: show,
+      data: JSON.stringify(show),
+      contentType: "application/json",
       success: (message) => {
         //get request with all shows from db
         console.log(`Success ${message}`);
+        this.displayShowList();
       },
       error: (err) => {
         console.log(`Error ${err}`);
       }
     })
+  }
+
+  displayShowList() {
+    console.log('Bravo');
   }
 
   render() {

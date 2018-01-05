@@ -9,16 +9,15 @@ const tmdb = require('../helpers/tmdb.js');
 
 const db = require('../database/index.js');
 
-//app.use(bodyParser.urlencoded({ extended: true }))
-
 // parse application/json
 app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-app.post('/show', function(req, res) {
+app.post('/shows', function(req, res) {
 	console.log(req.body);
 	db.addShowToList(req.body);
+	res.end();
 });
 
 app.get('/search', (req, res) => {
@@ -26,7 +25,7 @@ app.get('/search', (req, res) => {
 	// connects to API with user search
 	// displays result on screen
 
-	tmdb.searchShow(req.query.title, show =>  {
+	tmdb.searchShow(req.query.title, (show) =>  {
 		res.send(show);
 	})
 
