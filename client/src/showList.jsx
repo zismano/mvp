@@ -3,11 +3,11 @@ import ShowListItem from './showListItem.jsx';
 
 let ShowList = (props) => {
 	return (
-		<div>
+		<span>
 			{props.displayShowList.map(show => 
 				<ShowListItem show={show} />
 			)}
-		</div>
+		</span>
 	)
 }
 

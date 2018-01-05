@@ -46,10 +46,8 @@ var addShowToList = (show) => {
     showToAdd.save((err, show) => {
         if(err) {
             console.log(`Error adding show to DB ${err}`);
-  //          callback(err);
         } else {
             console.log('Success adding a show to DB');
-  //          callback(null, show);
         }
     })
 };
