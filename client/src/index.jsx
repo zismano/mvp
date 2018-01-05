@@ -55,7 +55,20 @@ class App extends React.Component {
   }
 
   displayShowList() {
-    console.log('Bravo');
+    $.ajax({
+      url: '/shows',
+      type: "GET",
+      success: (shows) => {
+        console.log(`Success ${shows}`);
+        console.dir(shows);
+        this.setState({
+          shows: shows
+        })
+      },
+      error: (err) => {
+        console.log(`Error ${err}`);
+      }
+    })
   }
 
   render() {

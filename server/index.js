@@ -20,6 +20,13 @@ app.post('/shows', function(req, res) {
 	res.end();
 });
 
+app.get('/shows', function(req, res) {
+	db.findShowsInDB(shows => {
+		console.log(`Shows in list:${shows}`);
+		res.send(shows);
+	});
+})
+
 app.get('/search', (req, res) => {
 		// user searches for tv show
 	// connects to API with user search
@@ -28,8 +35,8 @@ app.get('/search', (req, res) => {
 	tmdb.searchShow(req.query.title, (show) =>  {
 		res.send(show);
 	})
-
 });
+
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 

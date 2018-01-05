@@ -54,9 +54,18 @@ var addShowToList = (show) => {
     })
 };
 
-addShowToList({name: "HARDCODED"});
+var findShowsInDB = (callback) => {
+    TvShow.find({}, function(err, shows) {
+        if (err) {
+            console.log(err);
+        } else {
+            callback(shows);
+        }
+    })
+}
 
 module.exports = {
-    addShowToList
+    addShowToList,
+    findShowsInDB
 };
 
