@@ -7,7 +7,7 @@ let TopVoted = (props) => {
 			<a onClick={(e) => props.displayTopVoted()} href="#">Top 25 by rating</a>
 			<div>
 				{props.topVotedShows.map(show => 
-					<TopVotedShow show={show}/>
+					<TopVotedShow show={show} addToList={props.addToList}/>
 				)}
 			</div>
 		</div>

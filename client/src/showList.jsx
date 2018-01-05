@@ -5,7 +5,7 @@ let ShowList = (props) => {
 	return (
 		<span>
 			{props.displayShowList.map(show => 
-				<ShowListItem show={show} />
+				<ShowListItem show={show}/>
 			)}
 		</span>
 	)

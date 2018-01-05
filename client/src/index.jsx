@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       shows: [],
       search: [],
-      topVoted: []
+      topVoted: [],
+      showInfo: []
     }
 
     this.searchShow = this.searchShow.bind(this);
@@ -97,10 +98,17 @@ class App extends React.Component {
     })
   }
 
+  // displayInfo(show) {
+  //   this.setState({
+  //     showInfo: this.state.shows
+  //   })
+  // }
+
   render() {
     return (
     	<div>
-        <TopVoted displayTopVoted={this.getTopVoted} topVotedShows={this.state.topVoted}/>
+        <TopVoted displayTopVoted={this.getTopVoted} topVotedShows={this.state.topVoted}
+        addToList={this.addToList}/>
    		 <h1>Welcome to My TV-Show List</h1>
   		<div>
   			<h2>My TV-Show list</h2>

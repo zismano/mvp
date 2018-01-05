@@ -15,23 +15,6 @@ var showSchema = mongoose.Schema({
 
 var TvShow = mongoose.model('TvShow', showSchema);
 
-// var tvShow = new TvShow({
-// 	imdb_id: "tt0944947",
-// 	title: "Game of Thrones",
-// 	imgBanner: "http://image.tmdb.org/t/p/w500/hDd5Zd9VMOqBeHa2agbnHZ98WWr.jpg",
-//     genres: [
-//         "drama",
-//         "fantasy",
-//         "science-fiction",
-//         "action",
-//         "adventure"
-//         ],
-//     network: "HBO",
-//     ratingPercentage: "94",
-//     seasons: 6,
-//     yearRelease: 2011
-// });
-
 var addShowToList = (show) => {
     // insert one to collection
     let showToAdd = new TvShow({
@@ -53,13 +36,6 @@ var addShowToList = (show) => {
             })            
         }
     })
-    // showToAdd.save((err, show) => {
-    //     if(err) {
-    //         console.log(`Error adding show to DB ${err}`);
-    //     } else {
-    //         console.log('Success adding a show to DB');
-    //     }
-    // })
 };
 
 var findShowsInDB = (callback) => {
