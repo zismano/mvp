@@ -1,13 +1,13 @@
 import React from 'react';
 
-let Search = (props) => {
+var Search = (props) => {
 	let showToSearch;
 	return (
 		<div>
-			<form>
+			<div>
 				<input type="text" placeholder="TV Show" ref={input => showToSearch = input}></input>	
 				<button onClick={(e) => props.searchShow(showToSearch.value)}>Search</button>	
-			</form>
+			</div>
 			<div>
 				<div>Search Result</div>
 				{/*<div>{props.searchResults.name}</div>*/}
