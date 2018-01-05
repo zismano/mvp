@@ -42,14 +42,24 @@ var addShowToList = (show) => {
         vote_average: show.vote_average,
         first_air_date: show.first_air_date
     });
-
-    showToAdd.save((err, show) => {
-        if(err) {
-            console.log(`Error adding show to DB ${err}`);
-        } else {
-            console.log('Success adding a show to DB');
+    TvShow.findOne({'name': show.name}, 'name', (err, sh) => {
+        if (sh === null) {
+            showToAdd.save((err, show) => {
+                if(err) {
+                    console.log(`Error adding show to DB ${err}`);
+                } else {
+                    console.log('Success adding a show to DB');
+                }
+            })            
         }
     })
+    // showToAdd.save((err, show) => {
+    //     if(err) {
+    //         console.log(`Error adding show to DB ${err}`);
+    //     } else {
+    //         console.log('Success adding a show to DB');
+    //     }
+    // })
 };
 
 var findShowsInDB = (callback) => {
