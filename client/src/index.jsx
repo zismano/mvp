@@ -20,6 +20,10 @@ class App extends React.Component {
     this.getTopVoted = this.getTopVoted.bind(this);
   }
 
+  componentDidMount() {
+   this.displayShowList(); 
+  }
+
   searchShow(showToSearch) {
   	$.ajax({
   		url: '/search',
