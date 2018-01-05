@@ -5,7 +5,9 @@ var path = require('path');
 
 var bodyParser = require('body-parser');
 
-const tmdb = require("../helpers/tmdb.js");
+const tmdb = require('../helpers/tmdb.js');
+
+const db = require('../database/index.js');
 
 //app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -14,11 +16,12 @@ app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-// app.post('/show', function(req, res) {
+app.post('/show', function(req, res) {
+	console.log(req.body);
+	db.addShowToList(req.body);
+});
 
-// });
-
-app.get('/shows', (req, res) => {
+app.get('/search', (req, res) => {
 		// user searches for tv show
 	// connects to API with user search
 	// displays result on screen
