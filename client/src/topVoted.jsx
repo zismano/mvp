@@ -5,9 +5,11 @@ let TopVoted = (props) => {
 	return (
 		<div>
 			<a onClick={(e) => props.displayTopVoted()} href="#">Top 25 by rating</a>
-			{props.topVotedShows.map(show => 
-				<TopVotedShow show={show}/>
-			)}
+			<div>
+				{props.topVotedShows.map(show => 
+					<TopVotedShow show={show}/>
+				)}
+			</div>
 		</div>
 	)
 }
