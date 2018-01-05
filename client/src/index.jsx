@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 import Search from './search.jsx';
+import ShowList from './showList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +39,9 @@ class App extends React.Component {
   }
 
   addToList(show) {
+    this.setState({
+      search: []
+    });
     $.ajax({
       url: '/shows',
       type: "POST",
@@ -77,11 +81,12 @@ class App extends React.Component {
    		 <h1>Welcome to My TV-Show List</h1>
   		<div>
   			<h2>My TV-Show list</h2>
+        <ShowList displayShowList={this.state.shows}/>
+{/*  			<li>Game of thrones</li>
   			<li>Game of thrones</li>
   			<li>Game of thrones</li>
   			<li>Game of thrones</li>
-  			<li>Game of thrones</li>
-  			<li>Game of thrones</li>
+  			<li>Game of thrones</li>*/}
   		</div>
 			<Search 
         searchShow={this.searchShow} 
