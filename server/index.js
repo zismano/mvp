@@ -37,6 +37,12 @@ app.get('/search', (req, res) => {
 	})
 });
 
+app.get('/topvoted', (req, res) => {
+	tmdb.getTopVoted((shows) => {
+		res.send(shows);
+	})
+})
+
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 

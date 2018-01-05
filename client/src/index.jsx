@@ -4,17 +4,20 @@ import $ from 'jquery';
 
 import Search from './search.jsx';
 import ShowList from './showList.jsx';
+import TopVoted from './topVoted.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       shows: [],
-      search: []
+      search: [],
+      topVoted: []
     }
 
     this.searchShow = this.searchShow.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.getTopVoted = this.getTopVoted.bind(this);
   }
 
   searchShow(showToSearch) {
@@ -64,7 +67,6 @@ class App extends React.Component {
       type: "GET",
       success: (shows) => {
         console.log(`Success ${shows}`);
-        console.dir(shows);
         this.setState({
           shows: shows
         })
@@ -75,18 +77,30 @@ class App extends React.Component {
     })
   }
 
+  getTopVoted() {
+    $.ajax({
+      url: '/topvoted',
+      type: "GET",
+      success: (shows) => {
+        console.log(shows);
+        this.setState({
+          topVoted: shows.slice(0, 25)
+        })
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
+
   render() {
     return (
     	<div>
+        <TopVoted displayTopVoted={this.getTopVoted} topVotedShows={this.state.topVoted}/>
    		 <h1>Welcome to My TV-Show List</h1>
   		<div>
   			<h2>My TV-Show list</h2>
         <ShowList displayShowList={this.state.shows}/>
-{/*  			<li>Game of thrones</li>
-  			<li>Game of thrones</li>
-  			<li>Game of thrones</li>
-  			<li>Game of thrones</li>
-  			<li>Game of thrones</li>*/}
   		</div>
 			<Search 
         searchShow={this.searchShow} 
