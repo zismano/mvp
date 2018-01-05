@@ -6,8 +6,12 @@ let Search = (props) => {
 		<div>
 			<form>
 				<input type="text" placeholder="TV Show" ref={input => showToSearch = input}></input>	
-				<button onClick={(e) => props.searchShow(showToSearch)}>Search</button>	
+				<button onClick={(e) => props.searchShow(showToSearch.value)}>Search</button>	
 			</form>
+			<div>
+				<div>Search Result</div>
+				{/*<div>{props.searchResults.name}</div>*/}
+			</div>
 		</div>
 	);
 }

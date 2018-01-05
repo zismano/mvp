@@ -5,13 +5,14 @@ mongoose.connect('mongodb://localhost/tvShows');
 var db = mongoose.connection;
 
 var showSchema = mongoose.Schema({
-	imdb_id: String,
-    title: String,
-    image: String,
-    genres: Array,
-    network: String,
-    rating: Number,
-    seasons: Number,
+	tmdb_id: String,
+    title: String,	// name
+    overview: String,
+    image: String,	// poster_path
+    genres: Array,	
+   // network: String,
+    popularity: Number,	// popularity
+  //  seasons: Number,
     yearRelease: Number
 });
 

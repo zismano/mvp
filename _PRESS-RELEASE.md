@@ -48,3 +48,18 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  TV Series App
+-------------
+Search series button 
+
+Top 25 series in rating
+Top 25 series in genre (user will choose genre)
+Top 25 series by year???
+
+- My series list
+Fields: Img, Title, genre, rating
+Options to list:
+1. Add to list
+2. Check if already watched
+3. Remove from list
